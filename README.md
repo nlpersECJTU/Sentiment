@@ -6,3 +6,6 @@
 
 - xie和li等，2018-Aspect Based Sentiment Analysis with Gated Convolutional Networks(acl 2018)<a href="https://www.aclweb.org/anthology/P18-1234/"> paper</a><a href=" https://github.com/wxue004cs/GCAE"> code</a><br/>
 论文采用卷积神经网络和门控制机制比之前的lstm+注意力机制模型简洁、运算效率高，门控机制的作用可以在给定的aspect信息中，有选择的提取aspect情感信息
+
+- Effective LSTMs for Target-Dependent Sentiment Classification(coling2015) <a href="https://arxiv.org/pdf/1512.01100v2.pdf"> paper</a><a href="http://ir.hit.edu.cn/~dytang/ "> code</a><br/>
+论文基于LSTM神经网络构建模型，可以有效的识别基于Aspect实体情感分析这个子任务，文中通过标记，提取文本中实体信息来推断出实体的情感极性
