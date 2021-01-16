@@ -15,3 +15,6 @@
 
 - Convolution over Hierarchical Syntactic and Lexical Graphs for Aspect Level Sentiment Analysis(EMNLP2020)<a href="https://www.aclweb.org/anthology/2020.emnlp-main.286/"> paper</a><a href="https://github.com/NLPWM-WHU/BiGCN"> code</a><br/>
 论文考虑到了语料级别的词共现信息，认为不同的词和词之间的句法关系应该要区别对待。具体来说，论文在建立句法树时为不同句法关系的两个词分配不同的边；统计语料中的词共现频率作为词法树的辺，最后利用多层GCN融合句法树，词法树，词的上下文表示三种信息后进行情感分类。
+
+- Transformation Networks for target-oriented sentiment classification(acl 2018)<a href="https://ai.tencent.com/ailab/media/publications/acl/Transformation_Networks_for_Target-Oriented_Sentiment_Classification.pdf"> paper</a><a href="https://github.com/lixin4ever/TNet"> code</a><br/>
+论文作者针对之前面向目标的情感分类问题的主流方法Rnn+Attention方法中存在的缺点提出了TNet模型，计算target与句子中每个词权重，针对处理过程中的句子信息的损失作者还提出上下文保存机制，最后通过一层卷积层，可以更好的提取与target相关的短语的情感极性
