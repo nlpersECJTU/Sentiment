@@ -29,5 +29,5 @@ songyouwei/ABSA-PyTorch/tree/aen."> code</a><br/>
 - Interactive Attention Networks for Aspect-Level Sentiment Classification（IJCAI 2017）<a href="https://arxiv.org/pdf/1709.00893.pdf"> paper</a> 
 本文作者认为Aspect-level的情感分类任务中，target与context应该具有交互性，即context应该是target-specific的，target也应该是context-specific的，传统模型中将二者分开建模或只针对其一，本文利用attention实现二者交互
 
-- Learning to Attend via Word-Aspect Associative Fusion for Aspect-based Sentiment Analysis（AAAI 2018）<a https://arxiv.org/abs/1712.05403"> paper</a>
+- Learning to Attend via Word-Aspect Associative Fusion for Aspect-based Sentiment Analysis（AAAI 2018）<a href = "https://arxiv.org/abs/1712.05403"> paper</a>
 本文作者是针对emnlp2016一篇文章中所提出的AETE-LSTM模型所存在的三个缺点提出的改进模型，提出aspect与word融合层来巧妙地分离各层的职责，使模型首先对aspect和words之间的关系进行建模，然后使注意力层专注于学习已经经过融合的上下文words的相对重要性
