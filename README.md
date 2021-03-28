@@ -18,3 +18,16 @@
 
 - Transformation Networks for target-oriented sentiment classification(acl 2018)<a href="https://ai.tencent.com/ailab/media/publications/acl/Transformation_Networks_for_Target-Oriented_Sentiment_Classification.pdf"> paper</a><a href="https://github.com/lixin4ever/TNet"> code</a><br/>
 论文作者针对之前面向目标的情感分类问题的主流方法Rnn+Attention方法中存在的缺点提出了TNet模型，计算target与句子中每个词权重，针对处理过程中的句子信息的损失作者还提出上下文保存机制，最后通过一层卷积层，可以更好的提取与target相关的短语的情感极性
+
+- Disconnected Recurrent Neural Networks for Text Categorization(acl 2018)<a href="https://www.aclweb.org/anthology/P18-1215.pdf"> paper</a>
+论文作者根据Rnn,Cnn在处理长文本中存在的缺点，提出了不连续、间断的Rnn，限制Rnn信息传输的步长，这样使得非连续的Rnn网络结合了传统的Rnn网络和Cnn网络的优点
+
+- Attentional Encoder Network for Targeted Sentiment Classification（acl 2019）<a href="https://arxiv.org/pdf/1902.09314.pdf"> paper</a><a href="https://github.com/
+songyouwei/ABSA-PyTorch/tree/aen."> code</a><br/>
+与以往大多数RNN+Attention的思路不同，作者在这篇论文里给出了注意力编码网络，避免了RNN系模型的缺点如难以并行化，需要大量数据等
+
+- Interactive Attention Networks for Aspect-Level Sentiment Classification（IJCAI 2017）<a href="https://arxiv.org/pdf/1709.00893.pdf"> paper</a> 
+本文作者认为Aspect-level的情感分类任务中，target与context应该具有交互性，即context应该是target-specific的，target也应该是context-specific的，传统模型中将二者分开建模或只针对其一，本文利用attention实现二者交互
+
+- Learning to Attend via Word-Aspect Associative Fusion for Aspect-based Sentiment Analysis（AAAI 2018）<a https://arxiv.org/abs/1712.05403"> paper</a>
+本文作者是针对emnlp2016一篇文章中所提出的AETE-LSTM模型所存在的三个缺点提出的改进模型，提出aspect与word融合层来巧妙地分离各层的职责，使模型首先对aspect和words之间的关系进行建模，然后使注意力层专注于学习已经经过融合的上下文words的相对重要性
