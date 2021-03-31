@@ -31,3 +31,21 @@ songyouwei/ABSA-PyTorch/tree/aen."> code</a><br/>
 
 - Learning to Attend via Word-Aspect Associative Fusion for Aspect-based Sentiment Analysis（AAAI 2018）<a href = "https://arxiv.org/abs/1712.05403"> paper</a>
 本文作者是针对emnlp2016一篇文章中所提出的AETE-LSTM模型所存在的三个缺点提出的改进模型，提出aspect与word融合层来巧妙地分离各层的职责，使模型首先对aspect和words之间的关系进行建模，然后使注意力层专注于学习已经经过融合的上下文words的相对重要性
+
+- SentiLARE:Sentiment-Aware Language Representation Learning with Linguistic Knowledge(2020 emnlp)
+将词的情感极性信息(从外部情感词典中获得)和词的词性信息(序列标注获得)融入到预训练语言模型(Bert)中。具体来说，第一，为了获得句子每个词的情感极性，将句子与情感词典中词的描述做相似度计算，得到词在不同使用情况下的权重，将不同情况下词按照加权求和方式得到最终词的情感极性。第二，使用词向标注工具对词进行标注。第三，将词的情感极性和词性信息作为embedding作为Bert的额外输入。第四，使用词的情感预测，词性预测，句子预测作为bert的预测任务。
+
+- A structure-enhanced graph convolutional network for sentiment analysis(2020 emnlp)
+词与词之间有不同依存关系应该区别对待，GCN应该要能区别出这些信息。论文将词性标注的特征和词与词之间的依存关系特征结合经过变换融入到GCN的邻接矩阵中，这样GCN进行节点消息传递时会考虑到上述两种特征。
+
+- Using the Past Knowledge to Improve Sentiment Classification(2020 emnlp)
+提出一种终生学习(lifelong learning)模型，模型可以保留和选择过去的知识以提升新任务的性能。具体来说，在学习新任务时，将门控机制控制前一个任务参数的流入，使用知识蒸馏的方式指导新任务的学习，直到所有任务学习完毕。
+
+- Label-Consistency based Graph Neural Networks for Semi-supervised Node Classification(acm)
+在半监督学习，GNNs中相邻的节点倾向于有相同的标签。论文提出了label-consistency GNN(LC-GNN),LC-GNN可以聚合那些具有相同标签但在图中不相连的节点之间的信息，扩大了节点的感受野。具体来说，计算节点间标签的相似度并写入邻接矩阵中，这样每个节点将会考虑到与其标签相一致的节点信息。
+
+- Relation-Aware Collaborative Learning for Unified Aspect-Based Sentiment Analysis(2020 acl)
+论文提出建模四种关系：AE任务和OE任务关系R1；R1和SC任务的关系R2；OE任务和SC任务的关系R3；AE任务和SC任务R4。具体来说，利用attention机制建模R1，将R1的attention分数矩阵输入到SC任务中以建模R2，将OE任务的输出输入到SC任务中以建模R3，通过不预测非aspect词的情感极性以建模R4。
+
+- Modelling Context and Syntactical Features for Aspect-based Sentiment Analysis(2020 acl)
+论文将词的dependency embedding,contextualized embedding(bert的输出),pos embedding输入到编码层，利用self-attention进行交互，最后将三种表示拼接作为最终句子表示用于AE任务；在SC任务中，将local context,global context分别建模，使用依存树中的语义距离作为词与词的距离衡量标准对距离过远的词进行mask或者权重降低，让模型更加关注局部的词，最后将局部的表示和全局的表示用self-attention交互送入分类层。
