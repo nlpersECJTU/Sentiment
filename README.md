@@ -49,3 +49,13 @@ songyouwei/ABSA-PyTorch/tree/aen."> code</a><br/>
 
 - Modelling Context and Syntactical Features for Aspect-based Sentiment Analysis(2020 acl)<br/>
 论文将词的dependency embedding,contextualized embedding(bert的输出),pos embedding输入到编码层，利用self-attention进行交互，最后将三种表示拼接作为最终句子表示用于AE任务；在SC任务中，将local context,global context分别建模，使用依存树中的语义距离作为词与词的距离衡量标准对距离过远的词进行mask或者权重降低，让模型更加关注局部的词，最后将局部的表示和全局的表示用self-attention交互送入分类层。
+
+-SentiBERT: A Transferable Transformer-Based Architecture for Compositional Sentiment Semantics<br/>
+论文针对复合的情感短语难以判断情感极性的问题进行了研究，因为复合情感短语经常包含情感的反转。论文提出sentibert可以有效捕捉复合的情感短语语义。具体来说，利用短语结构树提取复合情感短语的语义信息，在短语结构树上利用attention建模节点与节点间的关系，通过预测短语节点的情感极性训练bert得到与复合情感短语相关的sentibert。
+
+-Cross-Lingual Unsupervised Sentiment Classification with Multi-View Transfer Learning<br/>
+针对情感分析中标注数据有限且不易获得的问题，论文利用多视角的迁移学习做无监督的跨语言情感分析。具体来说，1.利用无监督的机器翻译模型（Encoder Decoder架构）将源语言编码，解码回源语言。2.利用无监督的机器翻译模型（Encoder Decoder架构）翻译成其他语言再翻译回源语言. 3.利用一个语言类别判别器(Lauguage discriminator)对抗训练。1可以提取领域内的信息，2可以提取跨领域信息，3可以拉大两个encoder的距离使得包含的信息是独特的
+
+-Dependency Graph Enhanced Dual-transformer Structure for Aspect-based Sentiment Classification<br/>
+对于依存树解析存在的错误和不稳定的问题，情感分析模型在利用依存树时可能会因为依存树解析错误而引起模型提取错误信息。论文通过分开解码两部分信息，一部分是经过transformer的信息，另一部分是加入了依存树的GCN模块，这两部分通过互相加入信息，弥补了某一部分信息的不足，从而即利用了依存树信息，又缓解了依存树解析错误带来的影响。
+
