@@ -65,5 +65,5 @@ songyouwei/ABSA-PyTorch/tree/aen."> code</a><br/>
 - Jointly Learning Aspect-Focused and Inter-Aspect Relations with Graph Convolutional Networks for Aspect Sentiment Analysis(2020 coling)<br/>
 论文利用图卷积神经网络提取依存树中长距离词之间的关系，并且建模了aspect关键词信息，多个aspect间的相互关系。具体来说，通过改变邻接矩阵中aspect关键词的权值达到更加关注aspect关键词的效果；通过在邻接矩阵中加入aspect词与aspect词的边连接达到建模多个aspect间的效果。
 
-Unsupervised Natural Language Inference via Decoupled Multimodal Contrastive Learning(2020 emnlp)<br/>
+- Unsupervised Natural Language Inference via Decoupled Multimodal Contrastive Learning(2020 emnlp)<br/>
 论文利用多模态对比学习用于无监督的自然语言推理任务。具体来说，通过一张图片和对应的句子描述的两种表示作为正例进行对比学习，如此句子表示中可以包含丰富的图像信息。进一步，通过图片中的像素块和对应的词两种表示（利用attention机制动态捕捉）作为正例进行对比学习，更加丰富了词的含义。预训练完后，将包含图像信息的文字表示用于自然语言推理任务，取得了很好的效果。
