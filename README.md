@@ -67,3 +67,15 @@ songyouwei/ABSA-PyTorch/tree/aen."> code</a><br/>
 
 - Unsupervised Natural Language Inference via Decoupled Multimodal Contrastive Learning(2020 emnlp)<br/>
 论文利用多模态对比学习用于无监督的自然语言推理任务。具体来说，通过一张图片和对应的句子描述的两种表示作为正例进行对比学习，如此句子表示中可以包含丰富的图像信息。进一步，通过图片中的像素块和对应的词两种表示（利用attention机制动态捕捉）作为正例进行对比学习，更加丰富了词的含义。预训练完后，将包含图像信息的文字表示用于自然语言推理任务，取得了很好的效果。
+
+- Graph Ensemble Learning over Multiple Dependency Trees for Aspect-level Sentiment Classification(2021 naacl)<br/>
+对于ABSA中用GNN集成依存树存在依存树解析错误的普遍问题，论文将多个解析器的解析结果进行集成，集成方式有两种，一种是所有解析结果的并集，另一种是交集。这使得模型更加鲁棒性。
+
+- Aspect-based Sentiment Analysis with Type-aware Graph Convolutional Networks and Layer Ensemble(2021 naacl)<br/>
+论文在集成依存树时，不仅考虑了词与词之间是否依存连接关系，还考虑了词之间的依存关系的类别。论文还提出在GCN层之间做attention以利用不同GCN层之间的不同语义关系。具体来说，使用adjcent matrix(邻接矩阵)和 relaition matrix（关系矩阵）代表句子中词之间的邻接关系和关系的类别，在GCN节点进行消息传递时集成关系矩阵生成词与词之间的attention分数，这样每个词在集成其他词信息时都考虑到关系类别信息，最后在GCN多层之间做attention得到最后的表示用于分类。
+
+- Selective Attention Based Graph Convolutional Networks for Aspect-Level Sentiment Classification(2021 naacl)<br/>
+有些句子aspect与情感词opinion在依存树中会超过两次才能到达，意味着需要超过两层的GCN才能建模这种远距离关系，然鹅现有的GCN层数一般两层就会达到性能饱和，论文针对这个问题，将图改为完全图利用多头attenion建模任意词与词之间的关系，通过top-k方式选择k个最重要的上下文，忽略其他词。
+
+- Understanding Pre-trained BERT for Aspect-based Sentiment Analysis（2020 coling）<br/>
+论文探究预训练bert的MLM任务是否能够含有ABSA任务所需要的一些特征。如aspect词能够包含opinion的信息，aspect能包含情感倾向信息，opinion词可以反映aspect词的情感极性。通过多个实验发现，预训练bert包含丰富的领域信息和本身aspect的语义信息，所以预训练bert并不能很好建模aspect和opion词的关系，但是对于aspect抽取任务是有效的，因为aspect抽取任务特别需要领域特征和需要知道词是不是aspect的特征，这些MLM能够满足。论文提出：需要一个更加适合的预训练任务能够解耦aspect和opinion的信息，以及使得aspect具有情感信息的任务(这或许是个新的可开发的领域，可以试试)。
